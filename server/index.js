@@ -222,12 +222,14 @@ if (process.env.NODE_ENV === 'production') {
 }
 **/
 
+/**
 // （今回は静的サイトを別でデプロイするため、この部分は直接使われませんが、汎用的な設定として残しておきます）
 const clientBuildPath = path.join(__dirname, '../dist');
 app.use(express.static(clientBuildPath));
 app.get('*', (req, res) => {
   res.sendFile(path.join(clientBuildPath, 'index.html'));
 });
+*/
 
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
