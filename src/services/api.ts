@@ -1,6 +1,6 @@
 import { Member } from '../types';
 
-const API_BASE_URL = 'http://localhost:3001/api';
+const API_BASE_URL = import.meta.env.VITE_API_URL || 'http://localhost:3001';
 
 export const api = {
   // Get all members
@@ -32,7 +32,7 @@ export const api = {
 
   // Delete member
   async deleteMember(id: number): Promise<void> {
-    const response = await fetch(`${API_BASE_URL}/members/${id}`, {
+    const response = await fetch(`${API_BASE_URL}/api/members/${id}`, {
       method: 'DELETE',
     });
     
