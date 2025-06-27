@@ -5,7 +5,7 @@ const API_BASE_URL = import.meta.env.VITE_API_URL || 'http://localhost:3001';
 export const api = {
   // Get all members
   async getMembers(): Promise<Member[]> {
-    const response = await fetch(`${API_BASE_URL}/members`);
+    const response = await fetch(`${API_BASE_URL}/api/members`);
     if (!response.ok) {
       throw new Error('Failed to fetch members');
     }
@@ -14,7 +14,7 @@ export const api = {
 
   // Add new member
   async addMember(name: string): Promise<Member> {
-    const response = await fetch(`${API_BASE_URL}/members`, {
+    const response = await fetch(`${API_BASE_URL}/api/members`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
