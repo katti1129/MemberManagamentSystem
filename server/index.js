@@ -112,6 +112,12 @@ app.get('/api/members', (req, res) => {
 });
 **/
 
+
+
+app.get('/', (req, res) => {
+  res.send('Hello from the latest version of the server!');
+});
+
 // 全メンバーを取得
 app.get('/api/members', async (req, res) => {
   try {
